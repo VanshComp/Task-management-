@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="main w-full min-h-screen bg-zinc-900 p-10 text-white">
+        <a class="text-blue-500 inline-block mb-10" href="/">Go Back To Home</a>
+        <h1 class="text-4xl tracking-tighter"><%= filename%></h1>
+        <p class="text-xl mt-5 "><%= fileData%></p>
+        <h1 class="text-4xl tracking-tighter">New texts.......</h1>
+        <form action="/files/<%= filename %>?_method=PATCH" method="post">
+            <textarea class="block w-full rounded-md outline-none px-5 mt-2 py-2 resize-none bg-zinc-800" name="newContent"><%= fileData %></textarea>
+            <input type="hidden" name="_method" value="PATCH">
+            <input class="mt-2 bg-blue-600 px-5 py-2 rounded-md" type="submit" value="Update">
+        </form>
+
+    </div>
+    
+    <script src="javascripts/index.js" ></script>
+</body>
+</html>
